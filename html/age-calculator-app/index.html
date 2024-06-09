@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <main>
+      <div class="form-container">
+        <form action="#" class="age-form flex flex-col">
+          <div class="input-container flex text-smokey-grey">
+            <div class="flex flex-col">
+              <label for="day" class="uppercase">Day</label>
+              <input
+                type="number"
+                name="day"
+                id="day"
+                min="1"
+                max="31"
+                placeholder="DD"
+                required
+              />
+              <p class="error hidden text-light-red" data-error-for="day">
+                Must be a valid day
+              </p>
+            </div>
+
+            <div class="flex flex-col">
+              <label for="month" class="uppercase">Month</label>
+              <input
+                type="number"
+                name="month"
+                id="month"
+                min="1"
+                max="12"
+                placeholder="MM"
+                required
+              />
+              <p class="error hidden text-light-red" data-error-for="month">
+                Must be a valid month
+              </p>
+            </div>
+
+            <div class="flex flex-col">
+              <label for="year" class="uppercase">Year</label>
+              <input
+                type="number"
+                name="year"
+                id="year"
+                placeholder="YYYY"
+                required
+              />
+              <p class="error hidden text-light-red" data-error-for="year">
+                Must be in the past
+              </p>
+            </div>
+          </div>
+
+          <div class="divider-container flex">
+            <div class="line"></div>
+            <button class="btn flex">
+              <img src="./assets/images/icon-arrow.svg" alt="" />
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="result-container">
+        <p class="result-text"><span class="year-span">--</span> years</p>
+        <p class="result-text"><span class="month-span">--</span> months</p>
+        <p class="result-text"><span class="day-span">--</span> days</p>
+      </div>
+    </main>
+  </body>
+</html>

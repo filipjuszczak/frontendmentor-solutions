@@ -1,0 +1,10 @@
+/* 375px */
+@media (max-width: 23.4375em) {
+  .wrapper {
+    padding: 0 0.75rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./queries.css" />
+    <title>Frontend Mentor | Results summary component</title>
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="card">
+        <div class="left-box">
+          <h1 class="result-heading">Your Result</h1>
+          <div class="avg-score-box">
+            <p class="avg-score">
+              <span class="avg-score-points">76</span>
+              <span class="avg-score-total-points">of 100</span>
+            </p>
+          </div>
+          <p class="score-grade">Great</p>
+          <p class="score-description">
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+        <div class="right-box">
+          <h2 class="summary-heading">Summary</h2>
+          <div class="score-container">
+            <div class="score-box reaction-box">
+              <div class="icon-box">
+                <img
+                  src="./assets/images/icon-reaction.svg"
+                  alt="Lightning icon"
+                />
+                <p class="score-heading reaction-heading">Reaction</p>
+              </div>
+              <p class="score">
+                <span class="reaction-score-points">80</span
+                ><span class="score-total-points"> / 100</span>
+              </p>
+            </div>
+            <div class="score-box memory-box">
+              <div class="icon-box">
+                <img src="./assets/images/icon-memory.svg" alt="Brain icon" />
+                <p class="score-heading memory-heading">Memory</p>
+              </div>
+              <p class="score">
+                <span class="memory-score-points">92</span
+                ><span class="score-total-points"> / 100</span>
+              </p>
+            </div>
+            <div class="score-box verbal-box">
+              <div class="icon-box">
+                <img src="./assets/images/icon-verbal.svg" alt="Chat icon" />
+                <p class="score-heading verbal-heading">Verbal</p>
+              </div>
+              <p class="score">
+                <span class="verbal-score-points">61</span
+                ><span class="score-total-points"> / 100</span>
+              </p>
+            </div>
+            <div class="score-box visual-box">
+              <div class="icon-box">
+                <img src="./assets/images/icon-visual.svg" alt="Eye icon" />
+                <p class="score-heading visual-heading">Visual</p>
+              </div>
+              <p class="score">
+                <span class="visual-score-points">72</span
+                ><span class="score-total-points"> / 100</span>
+              </p>
+            </div>
+          </div>
+          <a href="#" class="btn">Continue</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

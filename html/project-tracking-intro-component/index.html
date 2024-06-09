@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | Project tracking intro component</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__logo-box">
+          <img src="./images/logo.svg" alt="logo" class="logo" />
+        </div>
+        <button
+          class="header__mobile-toggle"
+          aria-controls="primary-navigation"
+          data-nav-expanded="false"
+        >
+          <span class="sr-only" aria-expanded="false">Navigation</span>
+        </button>
+        <nav>
+          <ul id="primary-navigation" class="header__nav">
+            <li>
+              <a href="#" class="ff-primary header__nav__link">Product</a>
+            </li>
+            <li>
+              <a href="#" class="ff-primary header__nav__link">Features</a>
+            </li>
+            <li>
+              <a href="#" class="ff-primary header__nav__link">Pricing</a>
+            </li>
+            <li>
+              <a href="#" class="ff-primary header__nav__link">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="main__text-box">
+          <p class="ff-primary main__subheading">Monograph Dashboard</p>
+          <h1 class="ff-primary main__heading">
+            Powerful insights into your team
+          </h1>
+          <p class="ff-secondary main__text">
+            Project planning and time tracking for agile teams
+          </p>
+          <div class="main__cta-box">
+            <a href="#" class="ff-primary main__cta--btn">Schedule a demo</a>
+            <p class="ff-primary main__cta--text">to see a live preview</p>
+          </div>
+        </div>
+        <div class="main__img-box">
+          <img
+            src="./images/illustration-devices.svg"
+            alt="phone next to a laptop"
+            class="main__img"
+          />
+        </div>
+      </div>
+    </main>
+    <div class="background"></div>
+  </body>
+</html>

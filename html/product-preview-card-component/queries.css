@@ -1,0 +1,52 @@
+/* 375px */
+@media (max-width: 23.4375em) {
+  .wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .img-desktop {
+    display: none;
+  }
+
+  .img-mobile {
+    display: block;
+    border-radius: 0;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  .text-box {
+    padding: 1.5rem 1.125rem;
+  }
+
+  .subheading {
+    font-size: 0.75rem;
+    margin-bottom: 1.125rem;
+  }
+
+  .perfume-description {
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .perfume-name,
+  .new-price {
+    font-size: 2rem;
+  }
+
+  .perfume-name {
+    margin-bottom: 1.125rem;
+  }
+
+  .price-box {
+    margin-bottom: 1.125rem;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+  }
+}

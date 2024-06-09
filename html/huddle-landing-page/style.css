@@ -1,0 +1,483 @@
+:root {
+  /* font-families */
+  --ff-primary: 'Open Sans', sans-serif;
+  --ff-secondary: 'Poppins', sans-serif;
+
+  /* font-weights */
+  --fw-bold: 700;
+  --fw-semi-bold: 600;
+  --fw-normal: 400;
+
+  /* font-sizes */
+  --fs-body: clamp(0.88rem, calc(0.8rem + 0.36vw), 1.13rem);
+  --fs-secondary-headings: clamp(1.13rem, calc(0.94rem + 0.95vw), 1.8rem);
+  --fs-primary-headings: clamp(1.38rem, calc(1.04rem + 1.7vw), 2.57rem);
+
+  /* colors */
+  --clr-primary-700: hsl(322 100% 66%);
+  --clr-neutral-700: hsl(192 100% 9%);
+  --clr-neutral-300: hsl(208 11% 55%);
+  --clr-neutral-100: hsl(193 100% 96%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* utility classes */
+.flow :where(:not(:last-child)) {
+  margin-bottom: var(--flow-space, 2rem);
+}
+
+.centered {
+  width: min(86rem, 90%);
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--flex-gap, 2rem);
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  .even-columns {
+    flex-direction: row;
+  }
+}
+
+.ff-body {
+  font-family: var(--ff-primary);
+}
+
+.ff-headings {
+  font-family: var(--ff-secondary);
+}
+
+.fs-body {
+  font-size: var(--fs-body);
+}
+
+.fs-primary-headings {
+  font-size: var(--fs-primary-headings);
+}
+
+.fs-secondary-headings {
+  font-size: var(--fs-secondary-headings);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semibold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-normal {
+  font-weight: var(--fw-normal);
+}
+
+.text-neutral-700 {
+  color: var(--clr-neutral-700);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-300 {
+  color: var(--clr-neutral-300);
+}
+
+.bg-primary-700 {
+  background-color: var(--clr-primary-700);
+}
+
+.bg-neutral-700 {
+  background-color: var(--clr-neutral-700);
+}
+
+.bg-neutral-300 {
+  background-color: var(--clr-neutral-300);
+}
+
+.button:link,
+.button:visited {
+  display: inline-block;
+  padding: var(--padding, 1em) 3.5em;
+  border: 0;
+  border-radius: 1000vw;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--step--2);
+  text-decoration: none;
+  color: hsl(0 0% 100%);
+  background-color: var(--clr-primary-700);
+  transition: color 250ms, background-color 250ms, box-shadow 250ms;
+}
+
+.button:hover,
+.button:active {
+  color: var(--clr-primary-700);
+  background-color: hsl(0 0% 100%);
+  box-shadow: inset 0 0 0 3px var(--clr-primary-700);
+}
+
+/* general */
+body {
+  text-align: center;
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  body {
+    text-align: left;
+  }
+}
+
+/* header */
+header {
+  padding-bottom: 2.5em;
+  background-color: hsl(191 89% 96%);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 2em 6em;
+}
+
+nav > div {
+  width: 40%;
+}
+
+nav > a:link,
+nav > a:visited {
+  padding: 0.5em 2em;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--step--1);
+  text-decoration: none;
+  color: var(--clr-neutral-700);
+  background-color: hsl(0 0% 100%);
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.05);
+  border-radius: 1000vw;
+  transition: color 250ms, background-color 250ms;
+}
+
+nav > a:hover,
+nav > a:active {
+  color: hsl(0 0% 100%);
+  background-color: var(--clr-neutral-700);
+}
+
+.header-image-box {
+  display: flex;
+  justify-content: center;
+}
+
+/* 768px */
+@media (min-width: 48em) {
+  .header-image-box > img {
+    width: 80%;
+  }
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  .header-text-box {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .header-image-box {
+    width: 60%;
+  }
+
+  .header-image-box > img {
+    width: 100%;
+  }
+}
+
+/* 1440px */
+@media (min-width: 90em) {
+  nav > a:link,
+  nav > a:visited {
+    padding: 0.8em 4em;
+  }
+}
+
+/* main */
+main {
+  padding-block: 4em 0;
+}
+
+main > .centered {
+  position: relative;
+}
+
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+  padding: 2em;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 13px;
+}
+
+.card-image-box {
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 13px;
+  background-color: hsl(0 0% 100%);
+  transform: translateY(40%);
+}
+
+/* 768px */
+@media (min-width: 48em) {
+  main img {
+    width: 60%;
+  }
+
+  p:not([class='footer-location']) {
+    width: 75%;
+    margin-inline: auto;
+  }
+
+  .cta {
+    width: 60%;
+    align-items: center;
+    text-align: center;
+    margin-inline: auto;
+  }
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  main img {
+    width: 100%;
+  }
+
+  p:not([class='footer-location']) {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .card {
+    flex-direction: row;
+    padding: 4em;
+  }
+
+  .card:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+
+  .card-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 1em;
+  }
+}
+
+/* 1440px */
+@media (min-width: 90em) {
+  .card p {
+    width: 80%;
+  }
+}
+
+/* footer */
+footer {
+  padding-block: 10em 5em;
+}
+
+footer .footer-logo {
+  height: 1.8rem;
+  filter: brightness(0) invert(1);
+}
+
+.footer-info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info-box {
+  text-align: left;
+}
+
+.footer-info-box > * {
+  padding-left: 2.5em;
+}
+
+.footer-info-box a:link,
+.footer-info-box a:visited,
+.footer-list a:link,
+.footer-list a:visited {
+  text-decoration: none;
+  color: var(--clr-neutral-100);
+}
+
+.footer-info-box a:hover,
+.footer-info-box a:active {
+  text-decoration: underline;
+}
+
+.footer-list a:link,
+.footer-list a:visited {
+  padding-block: 0.6em;
+}
+
+.footer-list a:hover,
+.footer-list a:active {
+  border-bottom: 1px solid var(--clr-neutral-100);
+}
+
+.footer-location,
+.footer-number,
+.footer-email {
+  position: relative;
+}
+
+.footer-location::before,
+.footer-number::before,
+.footer-email::before {
+  position: absolute;
+  top: 5%;
+  left: 0;
+}
+
+.footer-location::before {
+  content: url('./images/icon-location.svg');
+}
+
+.footer-number::before {
+  content: url('./images/icon-phone.svg');
+}
+
+.footer-email::before {
+  content: url('./images/icon-email.svg');
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.footer-copyright {
+  font-size: var(--step--2);
+}
+
+/* 768px */
+@media (min-width: 48em) {
+  .footer-location {
+    width: 65%;
+  }
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  footer .even-columns > * {
+    width: 50%;
+  }
+
+  .footer-list-container {
+    display: flex;
+    gap: 6rem;
+  }
+
+  .footer-copyright {
+    text-align: right;
+  }
+}

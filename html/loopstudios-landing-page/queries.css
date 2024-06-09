@@ -1,0 +1,228 @@
+/* 375px */
+@media (max-width: 375px) {
+  body {
+    position: relative;
+  }
+
+  .header {
+    margin-bottom: 6.25rem;
+    background-image: url('./images/mobile/image-hero.jpg');
+  }
+
+  .header__img-box {
+    margin-left: 1.5rem;
+  }
+
+  .header__img-box .logo {
+    width: 80%;
+  }
+
+  .nav__menu-btn {
+    margin-right: 2rem;
+  }
+
+  .nav--open .nav__menu-btn img {
+    stroke: black;
+  }
+
+  .nav__menu-btn .nav__menu-btn--icon {
+    width: 150%;
+  }
+
+  .nav__menu-btn--icon[name='close'] {
+    display: none;
+  }
+
+  .header.nav--open .nav__menu-btn--icon[name='close'] {
+    display: block;
+    filter: invert();
+  }
+
+  .header.nav--open .nav__menu-btn--icon[name='menu'] {
+    display: none;
+  }
+
+  .nav__links {
+    display: none;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 3.75rem;
+    padding: 5rem 1.5625rem 0 1.5625rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: hsl(0 100% 100%);
+  }
+
+  .nav__links--open {
+    display: flex;
+    padding-top: 7.5rem;
+  }
+
+  .nav__link:link,
+  .nav__link:visited {
+    color: hsl(0 0% 0%);
+  }
+
+  .nav__menu-btn {
+    display: block;
+  }
+
+  .header__text {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem;
+    font-size: 2.625rem;
+  }
+
+  .section-intro__img-box {
+    margin-bottom: 3rem;
+  }
+
+  .section-intro__img {
+    width: 100%;
+  }
+
+  .section-intro .container {
+    margin-bottom: 6.25rem;
+    padding: 0 1.5rem;
+  }
+
+  .section-intro__text-box {
+    max-width: 100%;
+    position: static;
+    padding: 0 0.75rem;
+  }
+
+  .section-intro__heading {
+    font-size: 2.125rem;
+    text-align: center;
+  }
+
+  .section-intro__description {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .section-creations__header {
+    justify-content: center;
+  }
+
+  .section-creations__heading {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .section-creations .container {
+    position: relative;
+  }
+
+  .section-creations__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 8.75rem);
+    padding: 0 0.75rem;
+  }
+
+  .section-creations__btn {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .section-creations__container__card {
+    min-height: unset;
+  }
+
+  .section-creations__container__card:nth-child(1) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-deep-earth.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section-creations__container__card:nth-child(2) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-night-arcade.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section-creations__container__card:nth-child(3) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-soccer-team.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section-creations__container__card:nth-child(4) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-grid.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section-creations__container__card:nth-child(5) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-from-above.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section-creations__container__card:nth-child(6) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-pocket-borealis.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section-creations__container__card:nth-child(7) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-curiosity.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .section-creations__container__card:nth-child(8) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+      url('./images/mobile/image-fisheye.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .card__text {
+    width: 50%;
+    bottom: 20%;
+    left: 5%;
+    font-size: 1.875rem;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__nav__container {
+    margin-bottom: 2.625rem;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__nav__img-box {
+    margin-bottom: 3.25rem;
+  }
+
+  .footer__nav__img-box .logo {
+    width: 100%;
+  }
+
+  .footer__socials__icons-container {
+    justify-content: center;
+  }
+}

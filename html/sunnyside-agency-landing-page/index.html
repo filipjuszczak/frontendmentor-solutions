@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
+  </head>
+  <body>
+    <!-- primary header -->
+    <header class="header">
+      <div>
+        <div class="header__logo-box">
+          <a href="#">
+            <img src="./images/logo.svg" alt="sunnyside logo" class="logo" />
+          </a>
+        </div>
+        <button
+          class="header__mobile-nav-toggle"
+          aria-controls="primary-navigation"
+          data-nav-expanded="false"
+        >
+          <!-- menu background icon / close menu background icon -->
+          <span class="sr-only" aria-expanded="false">Navigation</span>
+        </button>
+        <nav id="primary-navigation" data-expanded="false">
+          <ul class="header__links">
+            <li>
+              <a href="#" class="ff-primary header__link">About</a>
+            </li>
+            <li>
+              <a href="#" class="ff-primary header__link">Services</a>
+            </li>
+            <li>
+              <a href="#" class="ff-primary header__link">Projects</a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="ff-secondary uppercase header__link header__link--cta"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__text-box">
+        <!-- orange background image -->
+        <h1 class="ff-secondary t-center uppercase header__text-box__heading">
+          We are creatives
+        </h1>
+        <img
+          src="./images/icon-arrow-down.svg"
+          alt="arrow down icon"
+          class="header__text-box__arrow"
+        />
+      </div>
+    </header>
+    <!-- main content -->
+    <main class="main">
+      <section class="main__section-features">
+        <div class="main__section-features__tile">
+          <h1 class="ff-secondary main__section-features__heading">
+            Transform your brand
+          </h1>
+          <p class="ff-primary main__section-features-text">
+            We are a full-service creative agency specializing in helping brands
+            grow fast. Engage your clients through compelling visuals that do
+            most of the marketing for you.
+          </p>
+          <a href="#" class="ff-secondary uppercase main__section-features__btn"
+            >Learn more</a
+          >
+        </div>
+        <div class="main__section-features__tile egg-bg">
+          <!-- egg background image -->
+        </div>
+        <div class="main__section-features__tile goblet-bg">
+          <!-- goblet (?) background image -->
+        </div>
+        <div class="main__section-features__tile">
+          <h1 class="ff-secondary main__section-features__heading">
+            Stand out to the right audience
+          </h1>
+          <p class="ff-primary main__section-features-text">
+            Using a collaborative formula of designers, researchers,
+            photographers, videographers, and copywriters, we'll build and
+            extend your brand in digital places.
+          </p>
+          <a href="#" class="ff-secondary uppercase main__section-features__btn"
+            >Learn more</a
+          >
+        </div>
+        <div class="main__section-features__tile cherry-bg">
+          <!-- cherry background image -->
+          <h1 class="ff-secondary main__section-features__heading">
+            Graphic design
+          </h1>
+          <p class="ff-primary main__section-features-text">
+            Great design makes you memorable. We deliver artwork that
+            underscores your brand message and captures potential clients'
+            attention.
+          </p>
+        </div>
+        <div class="main__section-features__tile orange-bg">
+          <!-- orange background image -->
+          <h1 class="ff-secondary main__section-features__heading">
+            Photography
+          </h1>
+          <p class="ff-primary main__section-features-text">
+            Increase your credibility by getting the most stunning, high-quality
+            photos that improve your business image.
+          </p>
+        </div>
+      </section>
+      <section class="main__section-testimonials">
+        <h2 class="ff-secondary t-center main__section-testimonials__heading">
+          Client testimonials
+        </h2>
+        <div class="main__section-testimonials__container">
+          <article class="main__section-testimonial">
+            <img
+              src="./images/image-emily.jpg"
+              alt="Photo of Emily R."
+              class="main__section-testimonial__img"
+            />
+            <p class="ff-primary t-center main__section-testimonial__text">
+              We put our trust in Sunnyside and they delivered, making sure our
+              needs were met and deadlines were always hit.
+            </p>
+            <div class="main__section-testimonial__info-box">
+              <p class="ff-secondary t-center main__section-testimonial__name">
+                Emily R.
+              </p>
+              <p class="ff-primary t-center main__section-testimonial__role">
+                Marketing Director
+              </p>
+            </div>
+          </article>
+          <article class="main__section-testimonial">
+            <img
+              src="./images/image-thomas.jpg"
+              alt="Photo of Thomas S."
+              class="main__section-testimonial__img"
+            />
+            <p class="ff-primary t-center main__section-testimonial__text">
+              Sunnyside's enthusiasm coupled with their keen interest in our
+              brand's success made it a satisfying and enjoyable experience.
+            </p>
+            <div class="main__section-testimonial__info-box">
+              <p class="ff-secondary t-center main__section-testimonial__name">
+                Thomas S.
+              </p>
+              <p class="ff-primary t-center main__section-testimonial__role">
+                Chief Operating Officer
+              </p>
+            </div>
+          </article>
+          <article class="main__section-testimonial">
+            <img
+              src="./images/image-jennie.jpg"
+              alt="Photo of Jennie F."
+              class="main__section-testimonial__img"
+            />
+            <p class="ff-primary t-center main__section-testimonial__text">
+              Incredible end result! Our sales increased over 400% when we
+              worked with Sunnyside. Highly recommended!
+            </p>
+            <div class="main__section-testimonial__info-box">
+              <p class="ff-secondary t-center main__section-testimonial__name">
+                Jennie F.
+              </p>
+              <p class="ff-primary t-center main__section-testimonial__role">
+                Business Owner
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer__image-gallery">
+        <div class="footer__image-gallery__image-box">
+          <!-- milk bottles background image -->
+        </div>
+        <div class="footer__image-gallery__image-box">
+          <!-- orange background image -->
+        </div>
+        <div class="footer__image-gallery__image-box">
+          <!-- waffle cone background image -->
+        </div>
+        <div class="footer__image-gallery__image-box">
+          <!-- sugar cubes background image -->
+        </div>
+      </div>
+      <img src="./images/logo.svg" alt="sunnyside logo" class="logo" />
+      <nav>
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="ff-primary footer__link">About</a>
+          </li>
+          <li>
+            <a href="#" class="ff-primary footer__link">Services</a>
+          </li>
+          <li>
+            <a href="#" class="ff-primary footer__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer__social-media-box">
+        <ul class="footer__social-media-list">
+          <li>
+            <a href="#">
+              <img
+                src="./images/icon-facebook.svg"
+                alt="facebook logo"
+                class="footer__social-media-icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./images/icon-instagram.svg"
+                alt="instagram logo"
+                class="footer__social-media-icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./images/icon-twitter.svg"
+                alt="twitter logo"
+                class="footer__social-media-icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./images/icon-pinterest.svg"
+                alt="pinterest logo"
+                class="footer__social-media-icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

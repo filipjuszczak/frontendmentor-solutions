@@ -1,0 +1,14 @@
+/* 375px */
+@media (max-width: 23.4375em) {
+  .wrapper {
+    padding: 3rem 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+}

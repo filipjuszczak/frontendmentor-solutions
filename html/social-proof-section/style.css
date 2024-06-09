@@ -1,0 +1,330 @@
+:root {
+  /* font-family */
+  --ff-primary: 'League Spartan', sans-serif;
+
+  /* font-weights */
+  --fw-bold: 700;
+  --fw-semibold: 500;
+  --fw-normal: 400;
+
+  /* font-sizes */
+  --fs-primary-heading: clamp(2.33rem, 2.18rem + 0.76vw, 2.86rem);
+  --fs-secondary-heading: clamp(1.62rem, 1.56rem + 0.3vw, 1.83rem);
+  --fs-body: clamp(0.94rem, calc(0.9rem + 0.18vw), 1.06rem);
+
+  /* colors */
+  --clr-primary-700: hsl(300, 43%, 22%);
+  --clr-primary-500: hsl(333, 80%, 67%);
+
+  --clr-neutral-400: hsl(303, 10%, 53%);
+  --clr-neutral-200: hsl(300, 24%, 96%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* utility classes */
+.flex {
+  display: flex;
+  gap: var(--flex-gap, 0);
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+}
+
+.fs-body {
+  font-size: var(--fs-body);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.fw-normal {
+  font-weight: var(--fw-normal);
+}
+
+.text-primary-700 {
+  color: var(--clr-primary-700);
+}
+
+.text-primary-500 {
+  color: var(--clr-primary-500);
+}
+
+.text-neutral-400 {
+  color: var(--clr-neutral-400);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.bg-primary-700 {
+  background-color: var(--clr-primary-700);
+}
+
+.bg-neutral-200 {
+  background-color: var(--clr-neutral-200);
+}
+
+.rounded {
+  border-radius: 9px;
+}
+
+/* general */
+body {
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-primary);
+  background-image: url('./images/bg-pattern-top-mobile.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  body {
+    background-image: url('./images/bg-pattern-top-desktop.svg'),
+      url('./images/bg-pattern-bottom-desktop.svg');
+  }
+}
+
+/* main */
+.main-content {
+  width: min(75rem, 90%);
+  margin-inline: auto;
+  padding-block: 4em;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro-section {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro-section__text-box {
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-section__heading {
+  width: 18ch;
+  text-align: center;
+  line-height: 0.8;
+}
+
+.intro-section__text {
+  width: 48ch;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.intro-section__rated-container {
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.rated-card {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 1em;
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  .intro-section {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .intro-section > * {
+    width: 100%;
+  }
+
+  .intro-section__text-box {
+    align-items: start;
+  }
+
+  .intro-section__heading,
+  .intro-section__text {
+    text-align: left;
+  }
+
+  .intro-section__heading {
+    line-height: 1;
+  }
+
+  .intro-section__text {
+    width: 42ch;
+  }
+
+  .intro-section__heading,
+  .intro-section__text {
+    text-align: left;
+  }
+}
+
+/* 1440px */
+@media (min-width: 90em) {
+  .intro-section__rated-container {
+    align-items: start;
+  }
+
+  .rated-card {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-inline: 2em;
+  }
+
+  .rated-card:nth-child(2) {
+    align-self: center;
+  }
+
+  .rated-card:nth-child(3) {
+    align-self: end;
+  }
+}
+
+/* cards */
+.reviews-section {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review {
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2em;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 250ms;
+}
+
+.author-box {
+  gap: 1.5rem;
+}
+
+.review-author {
+  flex-direction: column;
+}
+
+.author-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* 1024px */
+@media (min-width: 64em) {
+  .reviews-section {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .review:nth-child(1):hover {
+    transform: translateY(-10%);
+  }
+
+  .review:nth-child(2) {
+    transform: translateY(10%);
+  }
+
+  .review:nth-child(2):hover {
+    transform: translateY(0%);
+  }
+
+  .review:nth-child(3) {
+    transform: translateY(20%);
+  }
+
+  .review:nth-child(3):hover {
+    transform: translateY(10%);
+  }
+}
