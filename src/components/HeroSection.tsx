@@ -2,7 +2,7 @@ import LinkButton from "./LinkButton";
 
 export default function HeroSection() {
   return (
-    <header className="text-slate mb-36 flex flex-col items-center pt-10 text-center">
+    <header className="text-slate mb-36 flex flex-col items-center pt-8 text-center lg:pt-20">
       <img src="/logo.svg" alt="" className="relative mb-16 self-center" />
       <picture>
         <source srcSet="/tablet/image-hero.png" media="(max-width: 48em)" />
