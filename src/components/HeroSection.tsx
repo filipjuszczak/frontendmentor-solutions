@@ -27,7 +27,7 @@ export default function HeroSection() {
           </picture>
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-darkSlate mb-6 max-w-[10ch] text-4xl font-bold">
+          <p className="text-darkSlate mb-6 max-w-[10ch] text-4xl font-bold xl:text-6xl">
             Group Chat for Everyone
           </p>
           <p className="mb-6 max-w-[42ch] px-6">
