@@ -1,30 +1,39 @@
-const formBoxEl = document.querySelector('.form-box');
-const submittedBoxEl = document.querySelector('.submitted-box');
-const ratingEl = document.querySelector('.rating');
-const btnEls = document.querySelectorAll('.rating-btn');
-const submitEl = document.querySelector('.submit-btn');
+const formBoxEl = document.querySelector(".form-box");
+const submittedBoxEl = document.querySelector(".submitted-box");
+const ratingEl = document.querySelector(".rating");
+const btnEls = document.querySelectorAll(".rating-btn");
+const errorEl = document.querySelector(".error");
+const submitBtn = document.querySelector(".submit-btn");
 let rating;
 
 function uncheckButtons() {
-  btnEls.forEach((el) => {
-    el.classList.remove('active');
+  btnEls.forEach(btn => {
+    btn.classList.remove("active");
   });
 }
 
-btnEls.forEach((el) => {
-  el.addEventListener('click', () => {
+btnEls.forEach(el => {
+  el.addEventListener("click", () => {
     uncheckButtons();
-    rating = el.value;
-    el.classList.add('active');
+
+    rating = el.dataset.value;
+    el.classList.add("active");
   });
 });
 
-submitEl.addEventListener('click', (e) => {
+submitBtn.addEventListener("click", e => {
   e.preventDefault();
+
   if (!rating) {
+    errorEl.setAttribute("aria-hidden", "false");
     return;
   }
-  formBoxEl.classList.add('form-box--hidden');
-  submittedBoxEl.classList.remove('submitted-box--hidden');
+
+  formBoxEl.classList.add("form-box--hidden");
+  formBoxEl.setAttribute("aria-hidden", "true");
+
+  submittedBoxEl.classList.remove("submitted-box--hidden");
+  submittedBoxEl.setAttribute("aria-hidden", "false");
+
   ratingEl.innerHTML = rating;
 });
