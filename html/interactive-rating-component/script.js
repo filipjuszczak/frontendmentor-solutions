@@ -1,6 +1,6 @@
 const formBoxEl = document.querySelector(".form-box");
 const submittedBoxEl = document.querySelector(".submitted-box");
-const ratingEl = document.querySelector(".rating");
+const resultEl = document.querySelector(".result");
 const btnEls = document.querySelectorAll(".rating-btn");
 const errorEl = document.querySelector(".error");
 const submitBtn = document.querySelector(".submit-btn");
@@ -35,5 +35,5 @@ submitBtn.addEventListener("click", e => {
   submittedBoxEl.classList.remove("submitted-box--hidden");
   submittedBoxEl.setAttribute("aria-hidden", "false");
 
-  ratingEl.innerHTML = rating;
+  resultEl.textContent = `You selected ${rating} out of 5`;
 });
