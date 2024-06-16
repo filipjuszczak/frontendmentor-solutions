@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("/fonts/WorkSans.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("/fonts/WorkSans.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("/fonts/WorkSans.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  @apply font-sans;
+  background-image: url("/images/background-pattern-mobile.svg");
+  @apply bg-lightPink;
+  @apply bg-repeat-x;
+}
+
+@media (min-width: 64em) {
+  body {
+    background-image: url("/images/background-pattern-desktop.svg");
+    @apply bg-lightPink;
+    @apply bg-repeat-x;
+  }
+}
+
+abbr {
+  text-decoration: none;
+}
+
+details[open] > summary::after {
+  content: url("/images/icon-minus.svg");
+}
+
+details:not([open]):last-of-type > summary,
+details:last-of-type > p {
+  padding-bottom: 0;
+}
+
+summary::marker {
+  content: "";
+}
+
+summary:focus-visible {
+  outline: 3px dotted hsl(292, 42%, 14%);
+}
