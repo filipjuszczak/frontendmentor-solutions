@@ -3,7 +3,8 @@ import { z } from "zod";
 const accordionDataSchema = z.object({
   id: z.string(),
   title: z.string(),
-  body: z.string()
+  body: z.string(),
+  open: z.boolean()
 });
 
 const accordionSchema = z.object({

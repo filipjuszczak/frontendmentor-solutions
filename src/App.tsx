@@ -5,22 +5,26 @@ const data: AccordionData[] = [
   {
     id: "a1",
     title: "What is Frontend Mentor, and how will it help me?",
-    body: "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building."
+    body: "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.",
+    open: true
   },
   {
     id: "a2",
     title: "Is Frontend Mentor free?",
-    body: "Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels."
+    body: "Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.",
+    open: false
   },
   {
     id: "a3",
     title: "Can I use Frontend Mentor projects in my portfolio?",
-    body: "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!"
+    body: "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!",
+    open: false
   },
   {
     id: "a4",
     title: "How can I get help if I'm stuck on a challenge?",
-    body: "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members."
+    body: "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.",
+    open: false
   }
 ];
 
