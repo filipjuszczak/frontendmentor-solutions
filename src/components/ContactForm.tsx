@@ -172,14 +172,14 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           required
           checked={data.consent}
           onChange={handlers.setConsent}
-          className="sr-only"
+          className="group/consent sr-only"
         />
         <label
           htmlFor="consent"
-          className="group flex cursor-pointer items-center gap-2"
+          className="group/consent flex cursor-pointer items-center gap-2"
         >
           <span
-            className={`${data.consent ? "after:opacity-100" : ""} after:content-['']" relative inline-block h-[20px] w-[20px] cursor-pointer border-2 border-mediumGrey after:absolute after:left-1/2 after:top-1/2 after:h-[12px] after:w-[12px] after:-translate-x-1/2 after:-translate-y-1/2 after:bg-mediumGreen after:opacity-0 after:hover:opacity-50 group-hover:after:opacity-50`}
+            className={`${data.consent ? "after:opacity-100" : ""} after:content-['']" relative inline-block h-[20px] w-[20px] cursor-pointer border-2 border-mediumGrey after:absolute after:left-1/2 after:top-1/2 after:h-[12px] after:w-[12px] after:-translate-x-1/2 after:-translate-y-1/2 after:bg-mediumGreen after:opacity-0 after:hover:opacity-50 group-hover/consent:after:opacity-50`}
           ></span>
           I consent to being contacted by the team
         </label>

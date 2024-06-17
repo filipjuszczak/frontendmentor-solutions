@@ -4,11 +4,24 @@
 
 @font-face {
   font-family: "Karla", sans-serif;
-  src:
-    url("/fonts/static/Karla-Regular.ttf") format("ttf"),
-    url("/fonts/static/Karla-Bold.ttf") format("ttf");
+  src: url("/fonts/static/Karla.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Karla", sans-serif;
+  src: url("/fonts/static/Karla.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 ::selection {
   background-color: hsl(148, 38%, 91%);
+}
+
+input.group\/consent:focus-within + label.group\/consent > span::after {
+  opacity: 0.5;
 }
