@@ -10,10 +10,6 @@
   }
 }
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   @apply font-sans;
   @apply bg-white;
