@@ -2,15 +2,11 @@ import LinkButton from "./LinkButton";
 
 export default function HeroSection() {
   return (
-    <header className="text-slate mb-36 flex flex-col items-center pt-8 text-center lg:pt-20">
+    <header className="mb-36 flex flex-col items-center pt-8 text-center text-slate lg:pt-20">
       <img src="/logo.svg" alt="" className="relative mb-16 self-center" />
       <picture>
         <source srcSet="/tablet/image-hero.png" media="(max-width: 48em)" />
-        <img
-          src="/tablet/image-hero.png"
-          alt=""
-          className="mb-16 scale-110 lg:hidden"
-        />
+        <img src="/tablet/image-hero.png" alt="" className="mb-16 lg:hidden" />
       </picture>
       <div className="relative flex flex-col items-center lg:flex-row lg:gap-24">
         <div>
@@ -27,7 +23,7 @@ export default function HeroSection() {
           </picture>
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-darkSlate mb-6 max-w-[10ch] text-4xl font-bold xl:text-6xl">
+          <p className="mb-6 max-w-[10ch] text-4xl font-bold text-darkSlate xl:text-6xl">
             Group Chat for Everyone
           </p>
           <p className="mb-6 max-w-[42ch] px-6">
