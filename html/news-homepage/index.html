@@ -11,21 +11,19 @@
       sizes="32x32"
       href="./public/images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.min.css" />
+    <script src="./script.min.js" defer></script>
     <title>Frontend Mentor | News homepage</title>
   </head>
   <body>
     <div class="overlay" aria-hidden="true"></div>
-
     <div class="container">
       <header class="main-header">
         <div>
-          <a href="#"
+          <a href="#" aria-label="Homepage"
             ><img src="./public/images/logo.svg" alt="" width="65" height="40"
           /></a>
         </div>
-
         <nav id="primary-navigation" aria-expanded="false">
           <ul class="navigation-links" role="list">
             <li>
@@ -45,7 +43,6 @@
             </li>
           </ul>
         </nav>
-
         <button
           id="mobile-navigation-button"
           aria-controls="primary-navigation"
@@ -64,7 +61,6 @@
           />
         </button>
       </header>
-
       <main class="main-content">
         <section class="hero-section">
           <article class="hero-article">
@@ -72,20 +68,15 @@
               <picture>
                 <source
                   media="(max-width:63.999em)"
-                  srcset="./public/images/image-web-3-mobile.jpg"
+                  srcset="./public/images/image-web-3-mobile.webp"
                 />
                 <source
                   media="(min-width:64em)"
-                  srcset="./public/images/image-web-3-desktop.jpg"
+                  srcset="./public/images/image-web-3-desktop.webp"
                 />
-                <img
-                  src="./public/images/image-web-3-mobile.jpg"
-                  alt=""
-                  class=""
-                />
+                <img src="./public/images/image-web-3-mobile.webp" alt="" />
               </picture>
             </div>
-
             <div class="hero-article__content">
               <h1 class="hero-article__heading">
                 The Bright Future of Web 3.0?
@@ -100,15 +91,12 @@
               </div>
             </div>
           </article>
-
           <aside class="hero-aside">
             <h2>New</h2>
-
             <article class="hero-aside__article">
               <h3><a href="#">VS Electric Cars</a></h3>
               <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
             </article>
-
             <article class="hero-aside__article">
               <h3><a href="#">The Downsides of AI Artistry</a></h3>
               <p>
@@ -116,7 +104,6 @@
                 generation?
               </p>
             </article>
-
             <article class="hero-aside__article">
               <h3><a href="#">Is VC Funding Drying Up?</a></h3>
               <p>
@@ -126,16 +113,14 @@
             </article>
           </aside>
         </section>
-
         <section class="articles-section">
           <article class="article">
             <div class="article__image">
               <img
-                src="./public/images/image-retro-pcs.jpg"
+                src="./public/images/image-retro-pcs.webp"
                 alt="Retro computer and keyboard, gameboy and joystick on a table."
               />
             </div>
-
             <div class="article-text">
               <span class="" aria-hidden="true">01</span>
               <h4 class="article-text__heading">
@@ -146,15 +131,13 @@
               </p>
             </div>
           </article>
-
           <article class="article">
             <div class="article__image">
               <img
-                src="./public/images/image-top-laptops.jpg"
+                src="./public/images/image-top-laptops.webp"
                 alt="Laptop keyboard with red backlight."
               />
             </div>
-
             <div class="article-text">
               <span class="" aria-hidden="true">02</span>
               <h4 class="article-text__heading">
@@ -165,15 +148,13 @@
               </p>
             </div>
           </article>
-
           <article class="article">
             <div class="article__image">
               <img
-                src="./public/images/image-gaming-growth.jpg"
+                src="./public/images/image-gaming-growth.webp"
                 alt="White console controller floating above a hand."
               />
             </div>
-
             <div class="article-text">
               <span class="" aria-hidden="true">03</span>
               <h4 class="article-text__heading">
