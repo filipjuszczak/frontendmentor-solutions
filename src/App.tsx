@@ -3,7 +3,6 @@ import ArticlePreview from "./components/ArticlePreview";
 
 export default function App() {
   const [articlePreviewData] = useState({
-    image: "/images/drawers.jpg",
     heading:
       "Shift the overall look and feel by adding these wonderful touches to furniture in your home",
     body: "Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete.",
@@ -19,7 +18,7 @@ export default function App() {
   });
 
   return (
-    <div className="bg-lightGrayishBlue flex min-h-screen items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center bg-lightGrayishBlue">
       <main className="max-w-[min(90%,48rem)] rounded-xl bg-white">
         <ArticlePreview data={articlePreviewData} />
       </main>
