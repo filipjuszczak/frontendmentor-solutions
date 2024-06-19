@@ -9,19 +9,8 @@ export default {
         grey: "hsl(0, 0%, 50%)",
         black: "hsl(0, 0%, 7%)",
       },
-      fontSize: {
-        base: "16px",
-      },
       fontFamily: {
-        body: "Figtree",
-      },
-      fontWeight: {
-        semibold: "600",
-        bold: "800",
-      },
-      screens: {
-        sm: "375px",
-        lg: "1440px",
+        sans: ["Figtree", "system-ui", "sans-serif"],
       },
     },
   },

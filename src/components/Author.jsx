@@ -3,9 +3,9 @@ import Avatar from "./Avatar";
 
 function Author({ name, avatarUrl }) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="mt-6 flex items-center gap-3">
       <Avatar imageUrl={avatarUrl} />
-      <p className="text-xs font-bold">{name}</p>
+      <p className="text-[0.875rem] font-extrabold">{name}</p>
     </div>
   );
 }
