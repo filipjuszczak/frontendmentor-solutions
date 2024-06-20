@@ -54,7 +54,9 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
             autoComplete="given-name"
           />
           {data.errors.firstName && (
-            <p className="text-xs text-red">This field is required</p>
+            <p className="text-xs text-red" role="alert" aria-live="assertive">
+              Please enter your first name.
+            </p>
           )}
         </div>
         <div className="flex grow flex-col gap-2">
@@ -75,7 +77,9 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
             autoComplete="family-name"
           />
           {data.errors.lastName && (
-            <p className="text-xs text-red">This field is required</p>
+            <p className="text-xs text-red" role="alert" aria-live="assertive">
+              Please enter your last name.
+            </p>
           )}
         </div>
       </fieldset>
@@ -93,10 +97,12 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           value={data.email}
           onChange={handlers.setEmail}
           required
-          className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
+          className={`${data.errors.email ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
         />
         {data.errors.email && (
-          <p className="text-xs text-red">Please enter a valid email address</p>
+          <p className="text-xs text-red" role="alert" aria-live="assertive">
+            Please enter a valid email address.
+          </p>
         )}
       </div>
       <fieldset className="space-y-2">
@@ -148,7 +154,9 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           </div>
         </div>
         {data.errors.queryType && (
-          <p className="text-xs text-red">Please select a query type</p>
+          <p className="text-xs text-red" role="alert" aria-live="assertive">
+            Please select a query type.
+          </p>
         )}
       </fieldset>
       <div className="flex flex-col gap-2">
@@ -166,7 +174,9 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           onChange={handlers.setMessage}
         ></textarea>
         {data.errors.message && (
-          <p className="text-xs text-red">This field is required</p>
+          <p className="text-xs text-red" role="alert" aria-live="assertive">
+            Please enter your message.
+          </p>
         )}
       </div>
       <div className="">
@@ -186,8 +196,8 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           <span>I consent to being contacted by the team</span>
         </label>
         {data.errors.consent && (
-          <p className="text-xs text-red">
-            To submit this form, please consent to being contacted
+          <p className="text-xs text-red" role="alert" aria-live="assertive">
+            To submit this form, please consent to being contacted.
           </p>
         )}
       </div>
