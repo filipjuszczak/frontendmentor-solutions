@@ -208,7 +208,7 @@ export default function App() {
 
   return (
     <div className="relative flex min-h-screen items-center bg-lightGreen px-4 py-8">
-      <main className="mx-auto w-[48rem] max-w-[64rem] rounded-2xl bg-white p-12">
+      <main className="mx-auto w-[48rem] max-w-[64rem] rounded-2xl bg-white p-4 md:p-12">
         <ContactForm data={data} handlers={handlers} />
       </main>
       {isModalVisible &&

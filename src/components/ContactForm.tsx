@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface ContactFormProps {
   data: {
     firstName: string;
@@ -27,12 +29,13 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ data, handlers }: ContactFormProps) {
+  const [selectedQueryType, setSelectedQueryType] = useState<string | null>();
   const selectedQuery = data.queryType;
 
   return (
     <form className="space-y-6 text-darkGrey" onSubmit={handlers.handleSubmit}>
       <h1 className="text-3xl font-bold">Contact Us</h1>
-      <div className="flex flex-col gap-6 lg:flex-row lg:gap-4">
+      <fieldset className="flex flex-col gap-6 lg:flex-row lg:gap-4">
         <div className="flex grow flex-col gap-2">
           <label
             htmlFor="firstName"
@@ -47,7 +50,8 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
             value={data.firstName}
             onChange={handlers.setFirstName}
             required
-            className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3`}
+            className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
+            autoComplete="given-name"
           />
           {data.errors.firstName && (
             <p className="text-xs text-red">This field is required</p>
@@ -67,13 +71,14 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
             value={data.lastName}
             onChange={handlers.setLastName}
             required
-            className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3`}
+            className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
+            autoComplete="family-name"
           />
           {data.errors.lastName && (
             <p className="text-xs text-red">This field is required</p>
           )}
         </div>
-      </div>
+      </fieldset>
       <div className="flex flex-col gap-2">
         <label
           htmlFor="email"
@@ -88,64 +93,64 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           value={data.email}
           onChange={handlers.setEmail}
           required
-          className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3`}
+          className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
         />
         {data.errors.email && (
           <p className="text-xs text-red">Please enter a valid email address</p>
         )}
       </div>
-      <div className="flex flex-col gap-2">
-        <label className="relative after:absolute after:z-10 after:pl-2 after:opacity-75 after:content-['*']">
+      <fieldset className="space-y-2">
+        <legend className="relative after:absolute after:z-10 after:pl-2 after:opacity-75 after:content-['*']">
           Query Type
-        </label>
+        </legend>
         <div className="flex flex-col gap-4 lg:flex-row">
           <div
-            className={`${selectedQuery === "generalEnquiry" ? "bg-lightGreen" : ""} ${data.errors.queryType ? "border-red" : ""} relative grow cursor-pointer rounded-md border border-mediumGreen px-8 py-4 hover:bg-lightGreen`}
-            onClick={() => handlers.setQueryType("generalEnquiry")}
+            className={`flex grow items-center gap-4 rounded-md border border-mediumGreen ${selectedQuery === "generalEnquiry" ? "bg-lightGreen" : ""} ${data.errors.queryType ? "border-red" : ""}`}
           >
-            <input
-              type="radio"
-              name="queryType"
-              id="generalEnquiry"
-              className="sr-only"
-              value="generalEnquiry"
-            />
             <label
               htmlFor="generalEnquiry"
-              className="flex cursor-pointer items-center gap-4"
+              className="flex w-full cursor-pointer items-center gap-4 px-8 py-4"
             >
-              <span
-                className={`${selectedQuery === "generalEnquiry" ? "after:opacity-100" : ""} after:content-['']" relative inline-block h-[20px] w-[20px] cursor-pointer rounded-full border-2 border-mediumGrey after:absolute after:left-1/2 after:top-1/2 after:h-[12px] after:w-[12px] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-mediumGreen after:opacity-0`}
-              ></span>
-              General Enquiry
+              <input
+                checked={selectedQueryType === "generalEnquiry"}
+                type="radio"
+                name="queryType1"
+                id="generalEnquiry"
+                onChange={() => {
+                  setSelectedQueryType("generalEnquiry");
+                  handlers.setQueryType("generalEnquiry");
+                }}
+                className="cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen"
+              />
+              <span>General Enquiry</span>
             </label>
           </div>
           <div
-            className={`${selectedQuery === "supportRequest" ? "bg-lightGreen" : ""} ${data.errors.queryType ? "border-red" : ""} relative grow cursor-pointer rounded-md border border-mediumGreen px-8 py-4 hover:bg-lightGreen`}
-            onClick={() => handlers.setQueryType("supportRequest")}
+            className={`flex grow items-center gap-4 rounded-md border border-mediumGreen ${selectedQuery === "supportRequest" ? "bg-lightGreen" : ""} ${data.errors.queryType ? "border-red" : ""}`}
           >
-            <input
-              type="radio"
-              name="queryType"
-              id="supportRequest"
-              className="sr-only"
-              value="supportRequest"
-            />
             <label
               htmlFor="supportRequest"
-              className="flex cursor-pointer items-center gap-4"
+              className="flex w-full cursor-pointer items-center gap-4 px-8 py-4"
             >
-              <span
-                className={`${selectedQuery === "supportRequest" ? "after:opacity-100" : ""} after:content-['']" relative inline-block h-[20px] w-[20px] cursor-pointer rounded-full border-2 border-mediumGrey after:absolute after:left-1/2 after:top-1/2 after:h-[12px] after:w-[12px] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-mediumGreen after:opacity-0`}
-              ></span>
-              Support Request
+              <input
+                checked={selectedQueryType === "supportRequest"}
+                type="radio"
+                name="queryType2"
+                id="supportRequest"
+                onChange={() => {
+                  setSelectedQueryType("supportRequest");
+                  handlers.setQueryType("supportRequest");
+                }}
+                className="cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen"
+              />
+              <span>Support Request</span>
             </label>
           </div>
         </div>
         {data.errors.queryType && (
           <p className="text-xs text-red">Please select a query type</p>
         )}
-      </div>
+      </fieldset>
       <div className="flex flex-col gap-2">
         <label
           htmlFor="message"
@@ -157,31 +162,28 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           required
           id="message"
           value={data.message}
-          className={`${data.errors.message ? "border-red" : ""} resize-none rounded-md border border-mediumGreen px-6 py-4`}
+          className={`${data.errors.message ? "border-red" : ""} resize-none rounded-md border border-mediumGreen px-6 py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
           onChange={handlers.setMessage}
         ></textarea>
         {data.errors.message && (
           <p className="text-xs text-red">This field is required</p>
         )}
       </div>
-      <div className="space-y-2">
-        <input
-          type="checkbox"
-          id="consent"
-          name="consent"
-          required
-          checked={data.consent}
-          onChange={handlers.setConsent}
-          className="group/consent sr-only"
-        />
+      <div className="">
         <label
           htmlFor="consent"
-          className="group/consent flex cursor-pointer items-center gap-2"
+          className="flex cursor-pointer items-center gap-2"
         >
-          <span
-            className={`${data.consent ? "after:opacity-100" : ""} after:content-['']" relative inline-block h-[20px] w-[20px] cursor-pointer border-2 border-mediumGrey after:absolute after:left-1/2 after:top-1/2 after:h-[12px] after:w-[12px] after:-translate-x-1/2 after:-translate-y-1/2 after:bg-mediumGreen after:opacity-0 after:hover:opacity-50 group-hover/consent:after:opacity-50`}
-          ></span>
-          I consent to being contacted by the team
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            required
+            checked={data.consent}
+            onChange={handlers.setConsent}
+            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen"
+          />
+          <span>I consent to being contacted by the team</span>
         </label>
         {data.errors.consent && (
           <p className="text-xs text-red">
@@ -190,7 +192,7 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
         )}
       </div>
       <div>
-        <button className="w-full rounded-md bg-mediumGreen py-4 font-bold tracking-wider text-white">
+        <button className="w-full rounded-md bg-mediumGreen py-4 font-bold tracking-wider text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen">
           Submit
         </button>
       </div>

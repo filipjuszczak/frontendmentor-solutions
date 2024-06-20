@@ -9,16 +9,16 @@ export default {
         red: "hsl(0, 66%, 54%)",
         white: "hsl(0, 0%, 100%)",
         mediumGrey: "hsl(186, 15%, 59%)",
-        darkGrey: "hsl(187, 24%, 22%)",
+        darkGrey: "hsl(187, 24%, 22%)"
       },
       fontFamily: {
-        sans: ["Karla", "sans-serif"],
+        sans: ["Karla", "system-ui", "sans-serif"]
       },
       fontWeight: {
         normal: 400,
-        bold: 700,
-      },
-    },
+        bold: 700
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };

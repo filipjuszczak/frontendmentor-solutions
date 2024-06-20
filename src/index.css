@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Karla", sans-serif;
-  src: url("/fonts/static/Karla.woff2") format("woff2");
+  font-family: "Karla";
+  src: url("/fonts/Karla.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Karla", sans-serif;
-  src: url("/fonts/static/Karla.woff2") format("woff2");
+  font-family: "Karla";
+  src: url("/fonts/Karla.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -21,6 +21,12 @@
 ::selection {
   background-color: hsl(148, 38%, 91%);
 }
+
+/* input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid hsl(169, 82%, 27%);
+  outline-offset: 5px;
+} */
 
 input.group\/consent:focus-within + label.group\/consent > span::after {
   opacity: 0.5;
