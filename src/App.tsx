@@ -60,45 +60,45 @@ export default function App() {
     images: [
       {
         id: "img1",
-        src: "/images/image-product-1.jpg",
-        alt: ""
+        src: "/images/image-product-1.webp",
+        alt: "Sneakers on a table."
       },
       {
         id: "img2",
-        src: "/images/image-product-2.jpg",
-        alt: ""
+        src: "/images/image-product-2.webp",
+        alt: "Sneaker on two rocks next to a branch and another sneaker."
       },
       {
         id: "img3",
-        src: "/images/image-product-3.jpg",
-        alt: ""
+        src: "/images/image-product-3.webp",
+        alt: "Sneaker on two rocks."
       },
       {
         id: "img4",
-        src: "/images/image-product-4.jpg",
-        alt: ""
+        src: "/images/image-product-4.webp",
+        alt: "Sneaker on two rocks."
       }
     ],
     thumbnails: [
       {
         id: "tmb1",
-        src: "/images/image-product-1-thumbnail.jpg",
-        alt: ""
+        src: "/images/image-product-1-thumbnail.webp",
+        alt: "Sneakers on a table."
       },
       {
         id: "tmb2",
-        src: "/images/image-product-2-thumbnail.jpg",
-        alt: ""
+        src: "/images/image-product-2-thumbnail.webp",
+        alt: "Sneaker on two rocks next to a branch and another sneaker."
       },
       {
         id: "tmb3",
-        src: "/images/image-product-3-thumbnail.jpg",
-        alt: ""
+        src: "/images/image-product-3-thumbnail.webp",
+        alt: "Sneaker on two rocks."
       },
       {
         id: "tmb4",
-        src: "/images/image-product-4-thumbnail.jpg",
-        alt: ""
+        src: "/images/image-product-4-thumbnail.webp",
+        alt: "Sneaker on two rocks."
       }
     ]
   });

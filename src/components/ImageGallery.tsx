@@ -53,7 +53,11 @@ export default function ImageGallery({
           className="absolute left-4 top-1/2 flex h-[2.5rem] w-[2.5rem] -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
           ariaLabel="See previous product photo"
         />
-        <button onClick={() => setIsLightboxOpen(i => !i)} className="w-full">
+        <button
+          aria-label="Open product image gallery."
+          onClick={() => setIsLightboxOpen(i => !i)}
+          className="w-full"
+        >
           <img
             src={images[currentImageIndex].src}
             alt={images[currentImageIndex].alt}
@@ -69,14 +73,6 @@ export default function ImageGallery({
         />
       </div>
       <div className="hidden md:block">
-        {/* <div className="flex justify-between">
-          <Thumbnails
-            onChangeImage={handleNextImage}
-            currentImageIndex={currentImageIndex}
-            items={thumbnails}
-            className="flex gap-[1.9375rem]"
-          />
-        </div> */}
         <Thumbnails
           onChangeImage={handleNextImage}
           currentImageIndex={currentImageIndex}

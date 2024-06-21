@@ -14,6 +14,7 @@ export default function PrimaryHeader() {
     <header className="relative flex justify-between border-[hsl(219,35%,92%)] px-6 py-[1.1875rem] lg:border-b lg:pb-9 lg:pt-[1.75rem] xl:px-0">
       <div className="flex items-center gap-4 lg:gap-14">
         <button
+          aria-label="Open navigation."
           aria-controls="main-navigation"
           className="relative z-50 lg:hidden"
           onClick={() => setIsNavigationOpen(i => !i)}
@@ -24,7 +25,7 @@ export default function PrimaryHeader() {
             <img src="/images/icon-menu.svg" alt="" width={16} height={15} />
           )}
         </button>
-        <a href="#">
+        <a href="#" aria-label="Go to homepage.">
           <img src="/images/logo.svg" alt="" width={138} height={20} />
         </a>
         <nav
