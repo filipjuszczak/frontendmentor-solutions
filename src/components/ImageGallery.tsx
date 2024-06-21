@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import ButtonPrevious from "./ButtonPrevious";
 import ButtonNext from "./ButtonNext";
 import Thumbnails from "./Thumbnails";
-import Lightbox from "./Lightbox";
+import { Lightbox } from "./Lightbox";
 
 interface ImageGalleryProps {
   images: {
@@ -22,8 +22,21 @@ export default function ImageGallery({
   images,
   thumbnails
 }: ImageGalleryProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  useEffect(() => {
+    if (isLightboxOpen && ref.current) {
+      const focusableElements = ref.current.querySelectorAll(
+        'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusableElements.length > 0) {
+        (focusableElements[0] as HTMLElement).focus();
+      }
+    }
+  }, [isLightboxOpen]);
 
   const imageCount = images.length;
   const handleSwitchImage = (direction: string) => {
@@ -83,6 +96,7 @@ export default function ImageGallery({
       {isLightboxOpen &&
         createPortal(
           <Lightbox
+            ref={ref}
             currentImage={images[currentImageIndex]}
             currentImageIndex={currentImageIndex}
             thumbnails={thumbnails}

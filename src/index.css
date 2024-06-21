@@ -18,6 +18,9 @@
   font-display: swap;
 }
 
-.nav-list li:has(a:hover) {
-  border-color: orange;
+*:focus-visible {
+  outline-width: 4px;
+  outline-style: solid;
+  @apply outline-orange;
+  outline-offset: 5px;
 }

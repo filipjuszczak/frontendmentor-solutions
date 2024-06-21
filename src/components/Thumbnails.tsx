@@ -18,7 +18,11 @@ export default function Thumbnails({
   return (
     <div className={className}>
       {items.map((item, idx) => (
-        <button key={item.id} onClick={() => onChangeImage(idx)}>
+        <button
+          key={item.id}
+          onClick={() => onChangeImage(idx)}
+          aria-label={`Show product image ${idx + 1} of ${items.length}`}
+        >
           <div className="relative">
             <div
               className={`absolute inset-0 rounded-[10px] ${currentImageIndex !== idx && "hover:bg-white/50"} ${currentImageIndex === idx && "border-2 border-orange bg-white/75"}`}
