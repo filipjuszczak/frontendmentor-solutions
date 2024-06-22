@@ -1,5 +1,5 @@
 interface ThumbnailsProps {
-  onChangeImage: (idx: number) => void;
+  onThumbnailClick: (idx: number) => void;
   currentImageIndex: number;
   items: {
     id: string;
@@ -10,7 +10,7 @@ interface ThumbnailsProps {
 }
 
 export default function Thumbnails({
-  onChangeImage,
+  onThumbnailClick,
   currentImageIndex,
   items,
   className
@@ -20,7 +20,7 @@ export default function Thumbnails({
       {items.map((item, idx) => (
         <button
           key={item.id}
-          onClick={() => onChangeImage(idx)}
+          onClick={() => onThumbnailClick(idx)}
           aria-label={`Show product image ${idx + 1} of ${items.length}`}
         >
           <div className="relative">

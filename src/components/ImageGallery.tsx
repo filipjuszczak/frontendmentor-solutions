@@ -5,31 +5,34 @@ import ButtonNext from "./ButtonNext";
 import Thumbnails from "./Thumbnails";
 import { Lightbox } from "./Lightbox";
 
+interface Image {
+  id: string;
+  src: string;
+  alt: string;
+}
+
 interface ImageGalleryProps {
-  images: {
-    id: string;
-    src: string;
-    alt: string;
-  }[];
-  thumbnails: {
-    id: string;
-    src: string;
-    alt: string;
-  }[];
+  images: Image[];
+  thumbnails: Image[];
+}
+
+export enum Direction {
+  FORWARD,
+  BACKWARD
 }
 
 export default function ImageGallery({
   images,
   thumbnails
 }: ImageGalleryProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const lightboxRef = useRef<HTMLDivElement | null>(null);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   useEffect(() => {
-    if (isLightboxOpen && ref.current) {
-      const focusableElements = ref.current.querySelectorAll(
+    if (isLightboxOpen && lightboxRef.current) {
+      const focusableElements = lightboxRef.current.querySelectorAll(
         'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
       );
       if (focusableElements.length > 0) {
@@ -39,30 +42,35 @@ export default function ImageGallery({
   }, [isLightboxOpen]);
 
   const imageCount = images.length;
-  const handleSwitchImage = (direction: string) => {
-    if (direction === "forward") {
-      if (currentImageIndex + 1 >= imageCount) {
-        setCurrentImageIndex(0);
-      } else {
-        setCurrentImageIndex(i => i + 1);
-      }
-    } else {
-      if (currentImageIndex - 1 < 0) {
-        setCurrentImageIndex(imageCount - 1);
-      } else {
-        setCurrentImageIndex(i => i - 1);
-      }
+  const handleSwitchImage = (direction: Direction) => {
+    switch (direction) {
+      case Direction.FORWARD:
+        if (currentImageIndex + 1 >= imageCount) {
+          setCurrentImageIndex(0);
+        } else {
+          setCurrentImageIndex(i => i + 1);
+        }
+        break;
+      case Direction.BACKWARD:
+        if (currentImageIndex - 1 < 0) {
+          setCurrentImageIndex(imageCount - 1);
+        } else {
+          setCurrentImageIndex(i => i - 1);
+        }
+        break;
+      default:
+        return;
     }
   };
 
-  const handleNextImage = (idx: number) => setCurrentImageIndex(idx);
+  const handleShowNextImage = (idx: number) => setCurrentImageIndex(idx);
   const handleCloseLightbox = () => setIsLightboxOpen(false);
 
   return (
     <div className="relative flex flex-col gap-8">
       <div className="relative lg:max-h-[27.8125rem] lg:max-w-[27.8125rem]">
         <ButtonPrevious
-          onClick={() => handleSwitchImage("backward")}
+          onClick={() => handleSwitchImage(Direction.BACKWARD)}
           className="absolute left-4 top-1/2 flex h-[2.5rem] w-[2.5rem] -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
           ariaLabel="See previous product photo"
         />
@@ -80,14 +88,14 @@ export default function ImageGallery({
           />
         </button>
         <ButtonNext
-          onClick={() => handleSwitchImage("forward")}
+          onClick={() => handleSwitchImage(Direction.FORWARD)}
           className="absolute right-4 top-1/2 flex h-[2.5rem] w-[2.5rem] -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
           ariaLabel="See next product photo"
         />
       </div>
       <div className="hidden md:block">
         <Thumbnails
-          onChangeImage={handleNextImage}
+          onThumbnailClick={handleShowNextImage}
           currentImageIndex={currentImageIndex}
           items={thumbnails}
           className="flex gap-[1.9375rem] justify-between"
@@ -96,12 +104,12 @@ export default function ImageGallery({
       {isLightboxOpen &&
         createPortal(
           <Lightbox
-            ref={ref}
+            ref={lightboxRef}
             currentImage={images[currentImageIndex]}
             currentImageIndex={currentImageIndex}
             thumbnails={thumbnails}
             onSwitchImage={handleSwitchImage}
-            onChangeImage={handleNextImage}
+            onThumbnailClick={handleShowNextImage}
             onClose={handleCloseLightbox}
           />,
           document.querySelector("#lightbox")!

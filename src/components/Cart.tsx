@@ -1,16 +1,10 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../context/Cart";
+import { Product } from "../interfaces/Product";
 
 interface CartProps {
   isVisible: boolean;
-  items: {
-    id: string;
-    name: string;
-    price: number;
-    currency: string;
-    quantity: number;
-    image: string;
-  }[];
+  items: Product[];
 }
 
 export default function Cart({ isVisible, items }: CartProps) {

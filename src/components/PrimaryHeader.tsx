@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../context/Cart";
 import Cart from "./Cart";
 
 export default function PrimaryHeader() {
@@ -99,7 +99,6 @@ export default function PrimaryHeader() {
             height="20"
             xmlns="http://www.w3.org/2000/svg"
             className="fill-[hsl(219,9%,45%)] hover:fill-black"
-            // aria-label={`${isCartVisible ? "Close" : "Open"} cart.`}
             aria-hidden="true"
           >
             <path

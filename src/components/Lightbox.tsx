@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import ButtonNext from "./ButtonNext";
 import ButtonPrevious from "./ButtonPrevious";
 import Thumbnails from "./Thumbnails";
+import { Direction } from "./ImageGallery";
 
 interface LightboxProps {
   currentImage: {
@@ -15,8 +16,8 @@ interface LightboxProps {
     src: string;
     alt: string;
   }[];
-  onSwitchImage: (direction: string) => void;
-  onChangeImage: (idx: number) => void;
+  onSwitchImage: (direction: Direction) => void;
+  onThumbnailClick: (idx: number) => void;
   onClose: () => void;
 }
 
@@ -27,7 +28,7 @@ export const Lightbox = forwardRef(
       currentImageIndex,
       thumbnails,
       onSwitchImage,
-      onChangeImage,
+      onThumbnailClick,
       onClose
     }: LightboxProps,
     ref: React.Ref<HTMLDivElement> | null
@@ -59,7 +60,7 @@ export const Lightbox = forwardRef(
           <div>
             <div className="relative">
               <ButtonPrevious
-                onClick={() => onSwitchImage("backward")}
+                onClick={() => onSwitchImage(Direction.BACKWARD)}
                 className="absolute left-0 top-1/2 flex h-[3.5rem] w-[3.5rem] md:-translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white"
                 ariaLabel="See previous product photo"
               />
@@ -69,14 +70,14 @@ export const Lightbox = forwardRef(
                 className="rounded-[0.9375rem] mb-10"
               />
               <ButtonNext
-                onClick={() => onSwitchImage("forward")}
+                onClick={() => onSwitchImage(Direction.FORWARD)}
                 className="absolute right-0 top-1/2 flex h-[3.5rem] w-[3.5rem] md:translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white"
                 ariaLabel="See next product photo"
               />
             </div>
             <div className="flex gap-[1.9375rem] justify-center">
               <Thumbnails
-                onChangeImage={onChangeImage}
+                onThumbnailClick={onThumbnailClick}
                 currentImageIndex={currentImageIndex}
                 items={thumbnails}
                 className="flex gap-[1.9375rem] justify-center flex-wrap"

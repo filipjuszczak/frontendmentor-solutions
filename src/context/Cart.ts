@@ -1,16 +1,9 @@
 import { createContext } from "react";
-import { Product } from "../App";
+import { Product } from "../interfaces/Product";
 
 export const CartContext = createContext<{
   cart: Product[];
-  addItem: (item: {
-    id: string;
-    name: string;
-    price: number;
-    currency: string;
-    quantity: number;
-    image: string;
-  }) => void;
+  addItem: (item: Product) => void;
   removeItem: (id: string) => void;
   clearCart: () => void;
 }>({

@@ -1,29 +1,14 @@
 import { useState } from "react";
-import { CartContext } from "./context/CartContext";
+import { CartContext } from "./context/Cart";
+import { Product } from "./interfaces/Product";
 import PrimaryHeader from "./components/PrimaryHeader";
 import ImageGallery from "./components/ImageGallery";
 import ProductDetails from "./components/ProductDetails";
 
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  currency: string;
-  quantity: number;
-  image: string;
-}
-
 export default function App() {
   const [cart, setCart] = useState<Product[]>([]);
 
-  const addItem = (item: {
-    id: string;
-    name: string;
-    price: number;
-    currency: string;
-    quantity: number;
-    image: string;
-  }) => {
+  const addItem = (item: Product) => {
     setCart(prevCart => {
       const cartItems = [...prevCart];
       const existingItemIdx = prevCart.findIndex(
