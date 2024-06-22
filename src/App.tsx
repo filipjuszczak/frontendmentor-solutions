@@ -105,9 +105,9 @@ export default function App() {
 
   return (
     <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
-      <div className="mx-auto max-w-[68.75rem]">
+      <div className="mx-auto max-w-[69.375rem]">
         <PrimaryHeader />
-        <main className="mx-auto flex max-w-[69.375rem] flex-col [&>*]:md:w-full md:flex-row md:items-center lg:gap-[7.8125rem] md:px-4 lg:px-[2.96875rem] md:pt-12 lg:pt-24">
+        <main className="mx-auto flex max-w-[69.375rem] flex-col [&>*]:md:w-full md:flex-row md:items-center lg:gap-[7.8125rem] md:px-4 lg:px-[2.96875rem] md:pt-12 lg:pt-[5.625rem]">
           <ImageGallery
             images={product.images}
             thumbnails={product.thumbnails}

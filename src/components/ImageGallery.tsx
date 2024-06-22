@@ -60,7 +60,7 @@ export default function ImageGallery({
 
   return (
     <div className="relative flex flex-col gap-8">
-      <div className="relative">
+      <div className="relative lg:max-h-[27.8125rem] lg:max-w-[27.8125rem]">
         <ButtonPrevious
           onClick={() => handleSwitchImage("backward")}
           className="absolute left-4 top-1/2 flex h-[2.5rem] w-[2.5rem] -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
