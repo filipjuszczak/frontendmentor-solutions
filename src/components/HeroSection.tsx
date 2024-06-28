@@ -1,34 +1,58 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Header from "./Header";
 import CarouselControls from "./CarouselControls";
 import ImageCarousel from "./ImageCarousel";
 
-const carouselImages = [
-  {
-    mobile: "/images/mobile-image-hero-1.jpg",
-    desktop: "/images/desktop-image-hero-1.jpg",
-    mobileWidth: 375,
-    mobileHeight: 360,
-    alt: "A small plant in a pot on a table next to two while chairs."
-  },
-  {
-    mobile: "/images/mobile-image-hero-2.jpg",
-    desktop: "/images/desktop-image-hero-2.jpg",
-    mobileWidth: 375,
-    mobileHeight: 360,
-    alt: "Three different-colored chairs next to each other."
-  },
-  {
-    mobile: "/images/mobile-image-hero-3.jpg",
-    desktop: "/images/desktop-image-hero-3.jpg",
-    mobileWidth: 375,
-    mobileHeight: 360,
-    alt: "Black chair in the middle of a room."
-  }
-];
-
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const carouselImages = useMemo(
+    () => [
+      {
+        mobile: "/images/mobile-image-hero-1.jpg",
+        desktop: "/images/desktop-image-hero-1.jpg",
+        mobileWidth: 375,
+        mobileHeight: 360,
+        alt: "A small plant in a pot on a table next to two while chairs."
+      },
+      {
+        mobile: "/images/mobile-image-hero-2.jpg",
+        desktop: "/images/desktop-image-hero-2.jpg",
+        mobileWidth: 375,
+        mobileHeight: 360,
+        alt: "Three different-colored chairs next to each other."
+      },
+      {
+        mobile: "/images/mobile-image-hero-3.jpg",
+        desktop: "/images/desktop-image-hero-3.jpg",
+        mobileWidth: 375,
+        mobileHeight: 360,
+        alt: "Black chair in the middle of a room."
+      }
+    ],
+    []
+  );
+
+  const heroSectionText = useMemo(
+    () => [
+      {
+        heading: "Discover innovative ways to decorate",
+        paragraph:
+          "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love."
+      },
+      {
+        heading: "We are available all across the globe",
+        paragraph:
+          "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today."
+      },
+      {
+        heading: "Manufactured with the best materials",
+        paragraph:
+          "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office."
+      }
+    ],
+    []
+  );
 
   const handleSwitchImage = (direction: "forward" | "backward") => {
     switch (direction) {
@@ -59,16 +83,12 @@ export default function HeroSection() {
       </div>
 
       <div className="px-8 py-[3.75rem] xl:px-[6.25rem] xl:pb-[9.5625rem] xl:pt-[7.5rem]">
-        <h1 className="text-mainHeading mb-4 font-semibold leading-none tracking-tighter text-black">
-          Discover innovative ways to decorate
+        <h1 className="mb-4 text-mainHeading font-semibold leading-none tracking-tighter text-black">
+          {heroSectionText[currentImageIndex].heading}
         </h1>
 
         <p className="mb-10 tracking-[-0.33px]">
-          We provide unmatched quality, comfort, and style for property owners
-          across the country. Our experts combine form and function in bringing
-          your vision to life. Create a room in your own style with our
-          collection and make your property a reflection of you and what you
-          love.
+          {heroSectionText[currentImageIndex].paragraph}
         </p>
 
         <a
