@@ -24,6 +24,7 @@ export default function ImperialWeightInput({
           max={100}
           name="weightSt"
           id="weightSt"
+          placeholder="0"
           className="mr-4 w-full text-gunMetal focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue"
           onChange={e => handleWeightChange({ st: Number(e.target.value) })}
         />
@@ -38,6 +39,7 @@ export default function ImperialWeightInput({
           step={0.01}
           name="weightLbs"
           id="weightLbs"
+          placeholder="0"
           className="mr-4 w-full text-gunMetal focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue"
           onChange={e => handleWeightChange({ lbs: Number(e.target.value) })}
         />

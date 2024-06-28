@@ -22,6 +22,7 @@ export default function ImperialHeightInput({ onChange }: ImperialHeightInput) {
           max={99}
           name="heightFt"
           id="heightFt"
+          placeholder="0"
           className="mr-4 w-full text-gunMetal focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue"
           onChange={e => handleHeightChange({ ft: Number(e.target.value) })}
         />
@@ -36,6 +37,7 @@ export default function ImperialHeightInput({ onChange }: ImperialHeightInput) {
           step={0.01}
           name="heightIn"
           id="heightIn"
+          placeholder="0"
           className="mr-4 w-full text-gunMetal focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue"
           onChange={e => handleHeightChange({ in: Number(e.target.value) })}
         />
