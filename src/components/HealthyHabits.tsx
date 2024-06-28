@@ -2,7 +2,10 @@ import HealthyHabit from "./HealthyHabit";
 
 export default function HealthyHabits() {
   return (
-    <div className="px-6 py-14 pb-32 md:pb-56 lg:mx-auto lg:max-w-[72.5rem] xl:px-0">
+    <section
+      aria-label="healthy habits"
+      className="px-6 py-14 pb-32 md:pb-56 xl:px-0"
+    >
       <div className="flex flex-col gap-10 px-6 md:px-[2.5625rem] lg:flex-row lg:px-0">
         <HealthyHabit
           icon="/images/icon-eating.svg"
@@ -22,6 +25,6 @@ export default function HealthyHabits() {
           description="Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation."
         />
       </div>
-    </div>
+    </section>
   );
 }

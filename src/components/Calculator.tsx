@@ -122,7 +122,7 @@ export default function Calculator() {
   }
 
   return (
-    <div className="space-y-6 rounded-2xl bg-white p-6 lg:pt-[12.1875rem]">
+    <div className="space-y-6 rounded-2xl bg-white p-6 shadow-[16px_32px_56px_0_hsla(211,40%,69%,0.25)] lg:mt-[12.1875rem] lg:p-8">
       <h2 className="text-2xl font-semibold tracking-tighter text-gunMetal">
         Enter your details below
       </h2>

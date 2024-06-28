@@ -2,7 +2,9 @@ import Calculator from "./Calculator";
 
 export default function Hero() {
   return (
-    <main className="mx-auto flex max-w-[72.5rem] flex-col gap-12 px-6 pb-[4.5rem] pt-8 md:px-[2.5625rem] lg:flex-row lg:gap-[8.1875rem] lg:pt-[4.6875rem] xl:px-0 lg:[&>*]:w-full">
+    <main className="relative mx-auto flex max-w-[72.5rem] flex-col gap-12 px-6 pb-48 pt-8 md:px-[2.5625rem] lg:flex-row lg:gap-[8.1875rem] lg:pt-[4.6875rem] xl:px-0 lg:[&>*]:w-full">
+      <div className="absolute left-0 top-0 -z-10 h-[50rem] w-full rounded-b-[36px] bg-gradient-to-tl from-[hsl(216,95%,92%)] to-[hsla(183,95%,92%,0)] lg:left-[-10%] lg:max-w-[90%]"></div>
+
       <div className="flex flex-col items-center text-center lg:items-start lg:text-start">
         <img
           src="/images/logo.svg"

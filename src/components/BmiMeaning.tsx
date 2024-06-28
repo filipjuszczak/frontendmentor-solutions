@@ -2,7 +2,7 @@ export default function BmiMeaning() {
   return (
     <section
       aria-describedby="meaning-heading"
-      className="flex flex-col gap-12 pb-[4.5rem] md:flex-row md:gap-[4.6875rem] md:pb-40 lg:mx-auto lg:max-w-[72.5rem] lg:items-center md:[&>*]:w-full"
+      className="flex flex-col gap-12 pb-[4.5rem] md:flex-row md:gap-[4.6875rem] md:pb-40 lg:items-center md:[&>*]:w-full"
     >
       <div>
         <img
