@@ -2,8 +2,14 @@ import BmiLimitationCard from "./BmiLimitationCard";
 
 export default function BmiLimitations() {
   return (
-    <div className="px-6 pb-[4.5rem] md:px-[2.5625rem] lg:mx-auto lg:max-w-[72.5rem]">
-      <h4 className="pb-8 text-center text-5xl font-semibold leading-[1.1] tracking-tighter text-gunMetal">
+    <section
+      aria-describedby="limitations-heading"
+      className="px-6 pb-[4.5rem] md:px-[2.5625rem] lg:mx-auto lg:max-w-[72.5rem]"
+    >
+      <h4
+        id="limitations-heading"
+        className="pb-8 text-center text-5xl font-semibold leading-[1.1] tracking-tighter text-gunMetal"
+      >
         Limitations of BMI
       </h4>
 
@@ -45,6 +51,6 @@ export default function BmiLimitations() {
           description="Certain health concerns may affect individuals of some Black and Asian origins at lower BMIs than others. To learn more, it is advised to discuss this with your GP or practice nurse."
         />
       </div>
-    </div>
+    </section>
   );
 }

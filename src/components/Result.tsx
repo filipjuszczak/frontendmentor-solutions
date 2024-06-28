@@ -12,6 +12,7 @@ export default function Result({ bmi, details }: ResultProps) {
           {bmi?.toFixed(2) || ""}
         </p>
       </div>
+
       <p>{details}</p>
     </div>
   );

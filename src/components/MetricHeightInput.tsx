@@ -11,9 +11,7 @@ export default function MetricHeightInput({
     <div className="flex w-full justify-between rounded-xl border border-darkElectricBlue px-6 py-[1.25rem] text-2xl font-semibold hover:border-blue">
       <input
         type="number"
-        minLength={1}
         min={1}
-        maxLength={3}
         max={250}
         name="heightCm"
         id="heightCm"

@@ -24,5 +24,3 @@ export default function BmiLimitationCard({
     </div>
   );
 }
-
-// shadow-[16px_32px_56px_0_rgba(143,174,207,0.25)]

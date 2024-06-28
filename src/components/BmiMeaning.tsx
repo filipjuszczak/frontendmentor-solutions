@@ -1,6 +1,9 @@
 export default function BmiMeaning() {
   return (
-    <div className="flex flex-col gap-12 pb-[4.5rem] md:flex-row md:gap-[4.6875rem] md:pb-40 lg:mx-auto lg:max-w-[72.5rem] lg:items-center md:[&>*]:w-full">
+    <section
+      aria-describedby="meaning-heading"
+      className="flex flex-col gap-12 pb-[4.5rem] md:flex-row md:gap-[4.6875rem] md:pb-40 lg:mx-auto lg:max-w-[72.5rem] lg:items-center md:[&>*]:w-full"
+    >
       <div>
         <img
           src="/images/image-man-eating.webp"
@@ -10,7 +13,10 @@ export default function BmiMeaning() {
         />
       </div>
       <div className="px-6 md:px-0 md:pr-[43px]">
-        <h2 className="pb-9 text-5xl font-semibold leading-[1.1] tracking-tighter text-gunMetal">
+        <h2
+          id="meaning-heading"
+          className="pb-9 text-5xl font-semibold leading-[1.1] tracking-tighter text-gunMetal"
+        >
           What your BMI result means
         </h2>
         <p className="text-darkElectricBlue">
@@ -22,8 +28,6 @@ export default function BmiMeaning() {
           activity, ideally about 30 minutes daily for five days a week.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
-
-// md:px-[2.5625rem]

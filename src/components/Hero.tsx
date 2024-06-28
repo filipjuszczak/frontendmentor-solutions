@@ -29,5 +29,3 @@ export default function Hero() {
     </main>
   );
 }
-
-// max-w-[min(calc(100%-3rem),72.5rem)] mx-auto

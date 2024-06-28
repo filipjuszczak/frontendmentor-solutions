@@ -18,9 +18,7 @@ export default function ImperialHeightInput({ onChange }: ImperialHeightInput) {
       <div className="flex w-full justify-between rounded-xl border border-darkElectricBlue px-6 py-[1.25rem] text-2xl font-semibold hover:border-blue">
         <input
           type="number"
-          minLength={1}
           min={0}
-          maxLength={2}
           max={99}
           name="heightFt"
           id="heightFt"
@@ -33,9 +31,7 @@ export default function ImperialHeightInput({ onChange }: ImperialHeightInput) {
       <div className="flex w-full justify-between rounded-xl border border-darkElectricBlue px-6 py-[1.25rem] text-2xl font-semibold hover:border-blue">
         <input
           type="number"
-          minLength={1}
           min={0}
-          maxLength={4}
           max={11.99}
           step={0.01}
           name="heightIn"

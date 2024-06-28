@@ -20,9 +20,7 @@ export default function ImperialWeightInput({
       <div className="flex w-full justify-between rounded-xl border border-darkElectricBlue px-6 py-[1.25rem] text-2xl font-semibold hover:border-blue">
         <input
           type="number"
-          minLength={1}
           min={0}
-          maxLength={3}
           max={100}
           name="weightSt"
           id="weightSt"
@@ -35,9 +33,7 @@ export default function ImperialWeightInput({
       <div className="flex w-full justify-between rounded-xl border border-darkElectricBlue px-6 py-[1.25rem] text-2xl font-semibold hover:border-blue">
         <input
           type="number"
-          minLength={1}
           min={0}
-          maxLength={3}
           max={13.99}
           step={0.01}
           name="weightLbs"
