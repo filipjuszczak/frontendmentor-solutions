@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-medium text-veryDarkBlue;
+}
+
+h1 {
+  @apply text-primaryHeading;
+}
+
+h2,
+h3,
+h4 {
+  @apply text-secondaryHeading;
+}
+
+p {
+  @apply text-body leading-body text-grayishBlue;
+}
+
+summary::marker {
+  content: "";
+}
+
+@media (min-width: 48em) {
+  p {
+    @apply mx-auto max-w-prose;
+  }
+}
