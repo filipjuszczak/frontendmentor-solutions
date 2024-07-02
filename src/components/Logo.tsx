@@ -5,7 +5,7 @@ interface LogoProps {
 
 export default function Logo({ isNavOpen, textColor }: LogoProps) {
   return (
-    <a href="#" className="relative z-50">
+    <a href="#" className="relative z-50" aria-label="Bookmark homepage">
       <svg width="148" height="25" xmlns="http://www.w3.org/2000/svg">
         <g fill="none" fillRule="evenodd">
           <path
