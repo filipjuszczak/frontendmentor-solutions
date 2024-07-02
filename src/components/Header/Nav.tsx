@@ -8,7 +8,8 @@ interface NavProps {
 
 export default function Nav({ isOpen }: NavProps) {
   useEffect(() => {
-    document.documentElement.classList.toggle("overflow-hidden");
+    if (isOpen) document.documentElement.classList.add("overflow-hidden");
+    else document.documentElement.classList.remove("overflow-hidden");
   }, [isOpen]);
 
   return (
