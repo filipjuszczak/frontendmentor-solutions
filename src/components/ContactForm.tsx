@@ -49,7 +49,6 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
             name="firstName"
             value={data.firstName}
             onChange={handlers.setFirstName}
-            required
             className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
             autoComplete="given-name"
           />
@@ -72,7 +71,6 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
             name="lastName"
             value={data.lastName}
             onChange={handlers.setLastName}
-            required
             className={`${data.errors.firstName ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
             autoComplete="family-name"
           />
@@ -96,7 +94,6 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           name="email"
           value={data.email}
           onChange={handlers.setEmail}
-          required
           className={`${data.errors.email ? "border-red" : ""} color-inherit rounded-md border border-mediumGreen px-6 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
         />
         {data.errors.email && (
@@ -167,7 +164,6 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
           Message
         </label>
         <textarea
-          required
           id="message"
           value={data.message}
           className={`${data.errors.message ? "border-red" : ""} resize-none rounded-md border border-mediumGreen px-6 py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen`}
@@ -188,7 +184,6 @@ export default function ContactForm({ data, handlers }: ContactFormProps) {
             type="checkbox"
             id="consent"
             name="consent"
-            required
             checked={data.consent}
             onChange={handlers.setConsent}
             className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mediumGreen"
