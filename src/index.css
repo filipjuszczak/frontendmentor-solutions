@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-purple-100: #dbd1fc;
+  --color-purple-500: #7551dc;
+  --color-yellow-100: #f9eee2;
+  --color-yellow-500: #ffcc6a;
+  --color-black: #121212;
+
+  --breakpoint-xxl: 1440px;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./assets/fonts/DMSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./assets/fonts/DMSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f6f5f6;
+}
